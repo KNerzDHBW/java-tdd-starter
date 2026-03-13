@@ -1,6 +1,6 @@
-# TicTacToe with Test driven development
+# Test driven development
 
-This repo is intended for educational purposes. It can be used to learn how to implement Tic Tac Toe using a TDD approch.
+This repo is intended for educational purposes. It can be used to learn how to use a TDD approch.
 
 # Original repo: junit-jupiter-starter-maven
 
