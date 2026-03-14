@@ -19,13 +19,21 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 class CalculatorTests {
 
+	// GIVEN Default instance of Calculator
+	// WHEN add() is called with 1 and 1
+	// THEN result is 2
 	@Test
 	@DisplayName("1 + 1 = 2")
 	void addsTwoNumbers() {
+		// GIVEN
 		Calculator calculator = new Calculator();
+		// WHEN, THEN
 		assertEquals(2, calculator.add(1, 1), "1 + 1 should equal 2");
 	}
 
+	// GIVEN Default instance of Calculator
+	// WHEN add() is called with {0} and {1} in csv
+	// THEN result is {2} in csv
 	@ParameterizedTest(name = "{0} + {1} = {2}", quoteTextArguments = false)
 	@CsvSource(textBlock = """
 			0,    1,   1
@@ -33,8 +41,10 @@ class CalculatorTests {
 			49,  51, 100
 			1,  100, 101
 			""")
-	void add(int first, int second, int expectedResult) {
+	void addCsv(int first, int second, int expectedResult) {
+		// GIVEN
 		Calculator calculator = new Calculator();
+		// WHEN, THEN
 		assertEquals(expectedResult, calculator.add(first, second),
 				() -> first + " + " + second + " should equal " + expectedResult);
 	}
